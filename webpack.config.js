@@ -12,6 +12,7 @@ module.exports = {
   // devtool: 'eval-source-map',
   entry: {
     javascript: './index.js',
+    html: './index.html',
   },
   output: {
     path: path.resolve(__dirname, 'www'),
@@ -26,6 +27,13 @@ module.exports = {
         query: {
           presets: ['es2015', 'react'],
         },
+      },
+      {
+        // file-loader to move index.html to www
+        test: /\.html$/,
+        include: path.resolve(__dirname, 'app'),
+        loader: 'file?name=[name].[ext]',
+
       },
       {
         test: /\.styl$/,

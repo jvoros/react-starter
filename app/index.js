@@ -6,7 +6,7 @@ import './styles';
 
 injectTapEventPlugin();
 
-import Main from './components/main'
+import Main from './components/main';
 
 ReactDOM.render((
   <Router history={hashHistory}>
